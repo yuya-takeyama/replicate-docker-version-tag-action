@@ -18,7 +18,7 @@ steps:
   - id: docker-tag
     uses: yuya-takeyama/docker-tag-from-github-ref-action@v1
   - id: docker-tags
-    uses: yuya-takeyama/docker-tag-from-github-ref-action
+    uses: yuya-takeyama/replicate-docker-version-tag-action@v1
     with:
       image: user/app
       tag: ${{ steps.docker-tag.outputs.tag }}
@@ -26,7 +26,7 @@ steps:
     uses: docker/build-push-action@v2
     with:
       push: true
-      tags: user/app:${{ steps.docker-tags.outputs.tags }}
+      tags: ${{ steps.docker-tags.outputs.tags }}
 ```
 
 With this example and given a tag `1.2.3`, the generated tags are like below:
