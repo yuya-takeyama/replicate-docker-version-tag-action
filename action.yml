@@ -1,11 +1,23 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Replicate Docker version tag'
+description: 'This action replicates Docker version tag from like `1.2.3` to `1.2` and `1`'
+author: 'Yuya Takeyama'
+branding:
+  icon: 'tag'
+  color: 'green'
 inputs:
-  milliseconds: # change this
+  tag:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Docker image tag indicates a semver (like `1.2.3`)'
+  image:
+    required: false
+    description: 'Docker image name (like `foo/bar` or `example.com/foo/bar`)'
+  separator:
+    required: false
+    description: 'Separator of multiple images'
+    default: ','
+outputs:
+  tags:
+    description: 'Replicated tags'
 runs:
   using: 'node12'
   main: 'dist/index.js'
