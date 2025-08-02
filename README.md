@@ -2,6 +2,23 @@
   <a href="https://github.com/yuya-takeyama/replicate-docker-version-tag-action/actions"><img alt="typescript-action status" src="https://github.com/yuya-takeyama/replicate-docker-version-tag-action/workflows/build-test/badge.svg"></a>
 </p>
 
+> [!CAUTION]
+> ## 🚨 This project is deprecated
+> 
+> **For security reasons, always use immutable commit hashes instead of mutable tags in GitHub Actions.**
+> 
+> ```yaml
+> # ❌ Unsafe: mutable tag
+> - uses: some-action@v2
+> 
+> # ✅ Safe: immutable commit hash
+> - uses: some-action@c3a4b5d6e7f8910abcdef1234567890123456789
+> ```
+> 
+> Learn more: [Supply Chain Attack via Mutable Tags - CVE-2025-30066](https://www.wiz.io/blog/github-action-tj-actions-changed-files-supply-chain-attack-cve-2025-30066)
+
+---
+
 # Replicate Docker version tag
 
 This action replicates Docker version tag from like `1.2.3` to `1.2` and `1`.
